@@ -634,7 +634,8 @@ local function initItemRequests(cacheAll)
 end
 
 local function getNumSpells()
-  local _, _, offset, numSpells = C_SpellBook.GetSpellBookSkillLineInfo(C_SpellBook.GetNumSpellBookSkillLines())
+  local info = C_SpellBook.GetSpellBookSkillLineInfo(C_SpellBook.GetNumSpellBookSkillLines());
+  local offset, numSpells = info.offset, info.numSpellBookItems;
   return offset + numSpells
 end
 
